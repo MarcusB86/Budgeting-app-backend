@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const express = require("express");
 
-const cors = require('cors');
+const cors = require("cors");
 
 // CONFIGURATION
 const app = express();
@@ -12,16 +12,17 @@ app.use(express.json())
 app.use(cors());
 
 
-// // CONTROLLERS
-// const workoutsController = require("./controllers/workoutsController")
+
+const transactionsController = require("./controllers/transactionsController");
 
 
-// HEALTH CHECK ROUTE
 app.get("/", (req, res) => {
-  res.send("Welcome to my fly ass budgeting app")
+    res.send("Welcome to my fly ass budgeting app")
 })
 
-// WHEN RECEIVING A REQUEST OR RESPONSE ON THE ROUTE `/workouts` WE WANT OUR APP TO USE THE `workoutsController`
-// app.use("/workouts", workoutsController)
+
+app.use("/transactions", transactionsController)
+
+
 
 module.exports = app;
