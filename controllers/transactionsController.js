@@ -1,7 +1,7 @@
 const express = require("express");
 const transaction = express.Router();
 const transactionArray = require("../models/transaction");
-const { nanoid } = required("nanoid")
+const { nanoid } = require("nanoid")
 
 transaction.get("/", (req, res) => {
     res.status(200).send(transactionArray);

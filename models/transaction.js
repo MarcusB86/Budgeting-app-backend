@@ -1,6 +1,9 @@
+const { nanoid } = require("nanoid")
+
+
 module.exports = [
     {
-        "id": "1",
+        "id": nanoid(4),
         "item_name": "Salary",
         "amount": 3000.00,
         "date": "2024-07-03",
@@ -8,7 +11,7 @@ module.exports = [
         "category": "Income"
       },
       {
-        "id": "2",
+        "id": nanoid(4),
         "item_name": "Food",
         "amount": 20.00,
         "date": "2024-07-04",
@@ -16,7 +19,7 @@ module.exports = [
         "category": "Spending"
       },
       {
-        "id": "3",
+        "id": nanoid(4),
         "item_name": "PS5",
         "amount": 500.00,
         "date": "2024-07-05",
@@ -24,7 +27,7 @@ module.exports = [
         "category": "Leisure"
       },
       {
-        "id": "4",
+        "id": nanoid(4),
         "item_name": "Sneakers",
         "amount": 150.00,
         "date": "2024-07-06",
