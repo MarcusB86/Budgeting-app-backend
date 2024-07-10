@@ -1,6 +1,7 @@
 const express = require("express");
 const transaction = express.Router();
 const transactionArray = require("../models/transaction");
+const { nanoid } = required("nanoid")
 
 transaction.get("/", (req, res) => {
     res.status(200).send(transactionArray);
@@ -17,14 +18,14 @@ transaction.get("/:id", (req, res) => {
 })
 
 transaction.post("/", (req,res) => {
-    const newTransaction = {id: transactionArray.length + 1, ...req.body}
+    const newTransaction = {id: nanoid(4) , ...req.body}
     transactionArray.push(newTransaction);
     res.status(201).send(transactionArray[transactionArray.length - 1])
 })
 
 transaction.delete("/:id", (req, res) => {
     const { id } = req.params;
-    const deleteTransaction = transactionArray.find(element => element.id === id)
+    const deleteTransaction = transactionArray.findIndex(element => element.id === id)
     
     if (deleteTransaction !== -1) {
         transactionArray.splice(deleteTransaction, 1)
